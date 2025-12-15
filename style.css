@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: rgb(241, 185, 111);
+}
+
+.calendar-wrapper {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 5px;
+    width: auto 1200px;
+    height: auto 600px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .current-month {
+
+} */
+
+.month-btns {
+    display: flex;
+    align-items: center;
+}
+
+button {
+
+    background: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+}
+
+.week-days-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .days-grid {
+
+} */
+
+
