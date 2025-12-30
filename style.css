@@ -19,6 +19,8 @@ body {
     gap: 5px;
     width: auto 1200px;
     height: auto 600px;
+    background: black;
+    color: white;
 }
 
 .calendar-header {
@@ -37,7 +39,8 @@ body {
 }
 
 button {
-    background: none;
+    background: black;
+    color: white;
     border: none;
     width: 50px;
     height: 50px;
@@ -45,7 +48,7 @@ button {
 }
 
 button:hover {
-    background: white;
+    background: rgb(241, 185, 111);
 }
 
 .week-days-wrapper {
@@ -53,8 +56,13 @@ button:hover {
     justify-content: space-between;
 }
 
-/* .days-grid {
+.days-wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
 
-} */
+.days-grid {
+    gap: 5px;
+}
 
 
