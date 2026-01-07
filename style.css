@@ -17,16 +17,18 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     gap: 5px;
-    width: auto 1200px;
-    height: auto 600px;
     background: black;
     color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid white;
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid white;
 }
 
 /* .current-month {
@@ -36,6 +38,7 @@ body {
 .month-btns {
     display: flex;
     align-items: center;
+    border: 1px solid white;
 }
 
 button {
@@ -45,6 +48,7 @@ button {
     width: 50px;
     height: 50px;
     align-items: center;
+    border: 1px solid white;
 }
 
 button:hover {
@@ -52,17 +56,23 @@ button:hover {
 }
 
 .week-days-wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    border: 1px solid white;
 }
 
 .days-wrapper {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    border: 1px solid red;
 }
 
-.days-grid {
-    gap: 5px;
+.day {
+    border: 1px solid red;
+    padding: 15px;
 }
+
 
 

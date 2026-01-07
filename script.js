@@ -15,21 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let month = new Date;
     let day = new Date;
     currentYear = year.getFullYear();
-    console.log(currentYear);
     currentMonth = month.getMonth();
-    console.log(currentMonth);
     currentDay = day.getDate();
-    console.log(currentDay);
 
     function renderCalendar(year, month, day) {
 
         const daysInMonth = getFullDaysInMonth(year, month);
-
         console.log(daysInMonth);
 
-        const firstDayInMonth = new Date(year, month, 1 - ((new Date(year, month, 1).getDay() + 6) % 7));
-
-        console.log(firstDayInMonth.getDate());
+        const firstDayOfWeek = (new Date(year, month, 1).getDay() + 6) % 7;
+        console.log(firstDayOfWeek);
 
         const weekDaysContainer = document.getElementById('week-days');
         WEEK_DAYS.forEach((weekDay) => {
@@ -42,11 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(daysContainer);
         for(let i = 0; i < 42; i++) {
             let day = document.createElement('div');
-            day.textContent = 0;
+            day.className = `day`;
+            day.setAttribute('data-day-number', `${i}`);
             daysContainer.appendChild(day);
+        }
+
+        for(let i = 0; i < 42; i++) {
+            if(i >= firstDayOfWeek && i < daysInMonth + firstDayOfWeek) {
+                let day = document.querySelector(`[data-day-number="${i}"]`);
+                day.textContent = i - firstDayOfWeek + 1;
+            }
         }
 
     }
     
-    renderCalendar(currentYear, currentMonth, currentDay);
+    renderCalendar(currentYear, 3, currentDay);
 });
